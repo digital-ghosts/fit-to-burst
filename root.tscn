@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0nao5dqnendk"]
+
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_q1x1f"]
+[ext_resource type="PackedScene" uid="uid://cks431so4phjh" path="res://eraser.tscn" id="3_qakd2"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_q1x1f")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -45.0
+offset_top = -14.0
+offset_right = 1678.0
+offset_bottom = 2075.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Eraser" parent="." instance=ExtResource("3_qakd2")]
+z_index = 50
+position = Vector2(114, 370)
+collision_layer = 4
+
+[node name="StoryTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="StoryTimer" to="." method="_on_story_timer_timeout"]

@@ -1,0 +1,6 @@
+It was only a matter of time before I burst, I guess.
+Thanks for trying.
+if {story_completed} == true:
+	And you really let me ramble on for a while there.
+	I guess, if it's you, it's okay to let loose a little bit of myself.
+	[signal arg="true_end"]

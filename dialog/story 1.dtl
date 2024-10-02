@@ -1,0 +1,34 @@
+set {story_completed} = false
+Do you think it's tiring? I guess it is. But it's better than the alternative.
+Isn't it that way for everyone?
+I mean, this is a world with lots of people in it, but we're all exactly the same.
+That's why the world is the way it is. That's why the world works.
+Everyone's got stars bursting in their throat all the time.
+Everyone holds it together, at every cost.
+You know what I mean, right?
+Like. Okay. Think of another person.
+Someone with restless fingers, and crow's feet, and a crooked thumb.
+Someone perfectly contained. Someone who doesn't make trouble for others.
+Someone who fits in the contours of their body.
+[signal arg="red"]
+Doesn't it hurt? That red grief they bring out in you.
+[wait time="5.0"]
+And when their eyes make a sweep of the room, right before they land on you.
+That breath caught sideways like a branch in your gut. That queasy green, fearful... something.
+[signal arg="green"]
+Anticipation.
+[wait time="5.0"]
+And when their eyes finally light on you,
+the shape of that immediate rejection in them,
+that perfectly circular word,
+that silent "no",
+isn't it just the end of the world? Don't you get that?
+[signal arg="blue"]
+That horrible, explosive, blue-hot joy?
+[wait time="5.0"]
+You're sure good at holding it together. I can't even tell if you agree with me or not.
+Anyway. Thanks for keeping me company for so long. I appreciate your help keeping me in line,
+[signal arg="all"]
+even if it is you that makes me feel like this.
+set {story_completed} = true
+[end_timeline]

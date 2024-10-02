@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://65lufemhe0sr"]
+
+[ext_resource type="Resource" uid="uid://bx2ig3knk6lv5" path="res://addons/dialogic/Example Assets/backgrounds/default.tres" id="1_0nnhy"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_f1bgp"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_jsvaq"]
+
+[sub_resource type="Resource" id="Resource_jypou"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_70tsq"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_qnu2u"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_nlw7d"]
+script = ExtResource("2_f1bgp")
+overrides = {
+"text_custom_color": "Color(0.968627, 0.435294, 0.0392157, 1)",
+"text_use_global_color": "false"
+}
+
+[sub_resource type="Resource" id="Resource_g8owm"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_50vet"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_gwxou"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_axt8h"]
+script = ExtResource("2_f1bgp")
+overrides = {}
+
+[resource]
+script = ExtResource("3_jsvaq")
+name = "emphasis"
+inherits = ExtResource("1_0nnhy")
+base_overrides = {}
+layers = Array[ExtResource("2_f1bgp")]([SubResource("Resource_jypou"), SubResource("Resource_70tsq"), SubResource("Resource_qnu2u"), SubResource("Resource_nlw7d"), SubResource("Resource_g8owm"), SubResource("Resource_50vet"), SubResource("Resource_gwxou"), SubResource("Resource_axt8h")])
+metadata/_latest_layer = 7

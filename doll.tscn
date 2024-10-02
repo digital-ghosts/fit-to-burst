@@ -1,0 +1,161 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnta452m00gb0"]
+
+[ext_resource type="Script" path="res://scripts/doll.gd" id="1_mymft"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2xf4"]
+load_path = "res://.godot/imported/sachiko-placeholder.png-6aaa8405d8dedf23651c80559be5da42.ctex"
+
+[sub_resource type="Curve2D" id="Curve2D_ei5ya"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 79.1345, 28.1805, 0, 0, 0, 0, 116.847, 29.9059, 0, 0, 0, 0, 79.1345, 52.9104, 0, 0, 0, 0, 108.192, 64.9877, 0, 0, 0, 0, 95.8269, 87.9922, 0, 0, 0, 0, 35.2396, 94.3185, 0, 0, 0, 0, 173.725, 94.3185, 0, 0, 0, 0, 30.2937, 114.447, 0, 0, 0, 0, 168.779, 119.623, 0, 0, 0, 0, 76.0433, 135.727, 0, 0, 0, 0, 37.0943, 189.212, 0, 0, 0, 0, 38.949, 198.414, 0, 0, 0, 0, 59.9691, 197.264, 0, 0, 0, 0, 61.8238, 181.736, 0, 0, 0, 0, 79.7527, 159.306, 0, 0, 0, 0, 88.408, 148.954, 0, 0, 0, 0, 112.519, 151.255, 0, 0, 0, 0, 116.847, 169.658, 0, 0, 0, 0, 129.212, 187.487, 0, 0, 0, 0, 137.249, 196.113, 0, 0, 0, 0, 163.833, 196.113, 0, 0, 0, 0, 167.542, 192.088, 0, 0, 0, 0, 149.614, 171.384, 0, 0, 0, 0, 128.594, 143.203, 0, 0, 0, 0, 123.895, 140.506, 0, 0, 0, 0, 114.374, 140.327, 0, 0, 0, 0, 134.776, 170.233, 0, 0, 0, 0, 108.81, 82.2411, 0, 0, 0, 0, 127.975, 50.6099, 0, 0, 0, 0, 109.428, 48.8846, 0, 0, 0, 0, 103.864, 51.7601)
+}
+point_count = 31
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si01m"]
+radius = 6.18238
+
+[node name="Sachiko-placeholder" type="Sprite2D"]
+position = Vector2(-159, -185)
+scale = Vector2(1.6175, 1.73879)
+texture = SubResource("CompressedTexture2D_f2xf4")
+centered = false
+script = ExtResource("1_mymft")
+metadata/_edit_lock_ = true
+
+[node name="SpawnPoints" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ei5ya")
+
+[node name="SpawnFollow" type="PathFollow2D" parent="SpawnPoints"]
+position = Vector2(79.1345, 28.1805)
+rotation = 0.0457195
+
+[node name="Guts" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Gut12" type="Area2D" parent="Guts"]
+position = Vector2(71.0974, 144.928)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut12"]
+position = Vector2(29.6754, -0.575127)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut5" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut5"]
+position = Vector2(85.3168, 96.6189)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut1" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut1"]
+position = Vector2(64.915, 115.598)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut2" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut2"]
+position = Vector2(88.408, 33.3565)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut3" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut3"]
+position = Vector2(114.992, 38.5325)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut4" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut4"]
+position = Vector2(119.938, 62.1122)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut6" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut6"]
+position = Vector2(42.6584, 100.07)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut7" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut7"]
+position = Vector2(80.9892, 57.5113)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut8" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut8"]
+position = Vector2(102.628, 116.748)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut9" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut9"]
+position = Vector2(132.303, 101.22)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut10" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut10"]
+position = Vector2(158.269, 116.173)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut11" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut11"]
+position = Vector2(71.0974, 144.928)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut13" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut13"]
+position = Vector2(125.502, 145.503)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut14" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut14"]
+position = Vector2(56.8779, 174.259)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut15" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut15"]
+position = Vector2(134.776, 173.684)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut16" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut16"]
+position = Vector2(47.6043, 197.264)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut17" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut17"]
+position = Vector2(154.56, 193.813)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut18" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut18"]
+position = Vector2(96.4451, 74.1895)
+shape = SubResource("CircleShape2D_si01m")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckyogf3hleqoj"]
+
+[ext_resource type="PackedScene" uid="uid://c0nao5dqnendk" path="res://root.tscn" id="1_1gg0m"]
+[ext_resource type="Script" path="res://scripts/loss.gd" id="2_n5o6i"]
+
+[node name="Root" instance=ExtResource("1_1gg0m")]
+script = null
+
+[node name="Lose" type="Control" parent="." index="3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_n5o6i")
+
+[node name="begin again?" type="Button" parent="." index="4"]
+visible = false
+layout_mode = 0
+offset_left = 476.0
+offset_top = 1070.0
+offset_right = 1085.0
+offset_bottom = 1215.0
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "begin again?"
+
+[connection signal="pressed" from="begin again?" to="Lose" method="_on_begin_again_pressed"]

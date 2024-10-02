@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbtaf438gd6yt"]
+
+[ext_resource type="Texture2D" uid="uid://54dfiwdvwnth" path="res://img/bloom grayscale.png" id="1_rybjn"]
+[ext_resource type="Script" path="res://scripts/burst.gd" id="2_hir47"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hokx"]
+radius = 32.9767
+
+[node name="BurstSprite" type="Sprite2D"]
+position = Vector2(1, 0)
+scale = Vector2(0.0786922, 0.0786922)
+texture = ExtResource("1_rybjn")
+script = ExtResource("2_hir47")
+
+[node name="BurstArea" type="Area2D" parent="."]
+scale = Vector2(3.7724, 3.7724)
+collision_mask = 6
+
+[node name="BurstCollision" type="CollisionShape2D" parent="BurstArea"]
+position = Vector2(5.96046e-08, 5.96046e-08)
+shape = SubResource("CircleShape2D_6hokx")
+
+[connection signal="body_entered" from="BurstArea" to="." method="_on_burst_area_body_entered"]
+[connection signal="input_event" from="BurstArea" to="." method="_on_burst_area_input_event"]

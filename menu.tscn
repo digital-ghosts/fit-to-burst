@@ -1,0 +1,176 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc7fhmmes8f2u"]
+
+[ext_resource type="PackedScene" uid="uid://cks431so4phjh" path="res://eraser.tscn" id="1_1p0bv"]
+[ext_resource type="Texture2D" uid="uid://c754iupyuo471" path="res://img/cover star.png" id="1_4t2jt"]
+[ext_resource type="Script" path="res://sun_anim.gd" id="2_2pu46"]
+[ext_resource type="Texture2D" uid="uid://b2p27iuwqqqvr" path="res://img/cover text.png" id="2_ffjxu"]
+[ext_resource type="Script" path="res://menu.gd" id="5_14n6e"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -45.0
+offset_top = -14.0
+offset_right = 1678.0
+offset_bottom = 2075.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Instructions" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 750.0
+offset_top = 1000.0
+offset_right = 750.0
+offset_bottom = 1000.0
+
+[node name="Logo" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 750.0
+offset_top = 1000.0
+offset_right = 750.0
+offset_bottom = 1000.0
+
+[node name="sun" type="Sprite2D" parent="Logo"]
+position = Vector2(-9.99994, -437)
+scale = Vector2(3.04844, 3.04844)
+texture = ExtResource("1_4t2jt")
+script = ExtResource("2_2pu46")
+
+[node name="text" type="Sprite2D" parent="Logo"]
+position = Vector2(-9.99994, -437)
+scale = Vector2(3.04844, 3.04844)
+texture = ExtResource("2_ffjxu")
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = 29.0
+offset_right = 285.0
+offset_bottom = 759.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+script = ExtResource("5_14n6e")
+
+[node name="how to play" type="Button" parent="MenuContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+toggle_mode = true
+text = "how to play"
+
+[node name="btw" type="Button" parent="MenuContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+toggle_mode = true
+text = "by the way..."
+
+[node name="start" type="Button" parent="MenuContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+toggle_mode = true
+text = "start"
+
+[node name="credits" type="Button" parent="MenuContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+toggle_mode = true
+text = "credits"
+
+[node name="return" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 445.0
+offset_top = 1613.0
+offset_right = 1057.0
+offset_bottom = 1758.0
+theme_override_font_sizes/font_size = 100
+disabled = true
+toggle_mode = true
+text = "return"
+
+[node name="HideButtons" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 336.0
+offset_top = 1004.0
+offset_right = 1167.0
+offset_bottom = 1594.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="true ending" type="Label" parent="HideButtons"]
+visible = false
+layout_mode = 0
+offset_left = -283.0
+offset_top = 61.0
+offset_right = 1106.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 64
+text = "this is a game of endurance.
+suppress your emotions for as long as 
+you can bear. 
+
+if you can survive all three phases, 
+you'll get a small bonus ending!"
+horizontal_alignment = 1
+
+[node name="instructions" type="Label" parent="HideButtons"]
+visible = false
+layout_mode = 0
+offset_left = -283.0
+offset_top = 61.0
+offset_right = 1106.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 64
+text = "use your mouse to use the eraser
+
+click to advance text
+press spacebar or enter to advance text
+
+if the game is too hard, refresh the page!"
+horizontal_alignment = 1
+
+[node name="credits" type="Label" parent="HideButtons"]
+visible = false
+layout_mode = 0
+offset_left = -320.0
+offset_top = 43.0
+offset_right = 1153.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 64
+text = "this game was made by one person
+learning godot 4
+
+(and lots of advice from the good peeps at tiac)
+
+this game uses dialogic for godot it rocks
+"
+horizontal_alignment = 1
+
+[node name="Eraser" parent="." instance=ExtResource("1_1p0bv")]
+position = Vector2(114, 370)
+collision_layer = 4
+
+[connection signal="pressed" from="MenuContainer/how to play" to="MenuContainer" method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="MenuContainer/btw" to="MenuContainer" method="_on_btw_pressed"]
+[connection signal="pressed" from="MenuContainer/start" to="MenuContainer" method="_on_start_pressed"]
+[connection signal="pressed" from="MenuContainer/credits" to="MenuContainer" method="_on_credits_pressed"]
+[connection signal="pressed" from="return" to="MenuContainer" method="_on_return_pressed"]

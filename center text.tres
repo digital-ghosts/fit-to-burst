@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://bdlm2wtcagqsq"]
+
+[ext_resource type="Resource" uid="uid://dq4f5wh7elkff" path="res://style.tres" id="1_w3bh4"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_a6ach"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_n6uo4"]
+
+[sub_resource type="Resource" id="Resource_qu1ox"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_odqxt"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_2uiuh"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_sff5u"]
+script = ExtResource("2_a6ach")
+overrides = {
+"name_label_box_panel": "\"vn_textbox_name_label_panel.tres\"",
+"text_custom_color": "Color(0.968627, 0.435294, 0.0392157, 1)",
+"text_use_global_color": "false"
+}
+
+[sub_resource type="Resource" id="Resource_wf2y2"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_du5xu"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_vie86"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_mmnlb"]
+script = ExtResource("2_a6ach")
+overrides = {}
+
+[resource]
+script = ExtResource("3_n6uo4")
+name = "center text"
+inherits = ExtResource("1_w3bh4")
+base_overrides = {}
+layers = Array[ExtResource("2_a6ach")]([SubResource("Resource_qu1ox"), SubResource("Resource_odqxt"), SubResource("Resource_2uiuh"), SubResource("Resource_sff5u"), SubResource("Resource_wf2y2"), SubResource("Resource_du5xu"), SubResource("Resource_vie86"), SubResource("Resource_mmnlb")])
+metadata/_latest_layer = 3

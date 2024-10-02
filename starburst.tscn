@@ -1,0 +1,338 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwywbhtxe6u8e"]
+
+[ext_resource type="Script" path="res://scripts/doll.gd" id="2_dmr14"]
+[ext_resource type="Texture2D" uid="uid://crdc4wxwuady3" path="res://img/starburst empty bald.png" id="2_i5w3q"]
+[ext_resource type="Script" path="res://sun_anim.gd" id="3_bqsi3"]
+[ext_resource type="Texture2D" uid="uid://ct53y0lv03s5p" path="res://img/starburst head gray.png" id="3_ve4xj"]
+[ext_resource type="Script" path="res://timer.gd" id="4_525b8"]
+
+[sub_resource type="Curve2D" id="Curve2D_1cr1o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 185.471, 90.2927, 0, 0, 0, 0, 246.059, 111.572, 0, 0, 0, 0, 170.015, 144.353, 0, 0, 0, 0, 259.66, 169.658, 0, 0, 0, 0, 181.762, 208.766, 0, 0, 0, 0, 254.714, 235.796, 0, 0, 0, 0, 216.43, 247.188, 0, 0, 0, 0, 156.414, 266.277, 0, 0, 0, 0, 288.717, 260.526, 0, 0, 0, 0, 127.357, 315.737, 0, 0, 0, 0, 327.666, 305.96, 0, 0, 0, 0, 103.864, 360.596, 0, 0, 0, 0, 353.632, 364.621, 0, 0, 0, 0, 111.901, 406.029, 0, 0, 0, 0, 336.322, 433.635, 0, 0, 0, 0, 105.1, 463.541, 0, 0, 0, 0, 386.399, 471.017, 0, 0, 0, 0, 161.978, 500.923, 0, 0, 0, 0, 260.896, 543.481, 0, 0, 0, 0, 301.082, 575.688, 0, 0, 0, 0, 162.597, 554.409, 0, 0, 0, 0, 123.029, 595.817, 0, 0, 0, 0, 309.119, 613.645, 0, 0, 0, 0, 118.083, 651.603, 0, 0, 0, 0, 315.92, 679.783, 0, 0, 0, 0, 117.465, 730.393, 0, 0, 0, 0, 140.34, 759.149, 0, 0, 0, 0, 101.391, 768.926, 0, 0, 0, 0, 124.266, 801.707, 0, 0, 0, 0, 83.4621, 826.437, 0, 0, 0, 0, 86.5533, 871.871, 0, 0, 0, 0, 127.357, 883.373, 0, 0, 0, 0, 127.357, 842.54, 0, 0, 0, 0, 168.779, 744.771, 0, 0, 0, 0, 208.964, 734.994, 0, 0, 0, 0, 244.204, 754.548, 0, 0, 0, 0, 252.241, 797.681, 0, 0, 0, 0, 286.862, 859.793, 0, 0, 0, 0, 301.082, 904.077, 0, 0, 0, 0, 351.777, 887.399, 0, 0, 0, 0, 380.835, 867.845, 0, 0, 0, 0, 320.866, 849.441, 0, 0, 0, 0, 346.213, 818.385, 0, 0, 0, 0, 311.592, 778.702, 0, 0, 0, 0, 331.994, 717.74, 0, 0, 0, 0, 283.153, 725.217)
+}
+point_count = 46
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si01m"]
+radius = 6.18238
+
+[node name="starburst" type="Node2D"]
+visible = false
+position = Vector2(-352, -828)
+scale = Vector2(1.6175, 1.73879)
+script = ExtResource("2_dmr14")
+
+[node name="SpawnPoints" type="Path2D" parent="."]
+visible = false
+curve = SubResource("Curve2D_1cr1o")
+
+[node name="SpawnFollow" type="PathFollow2D" parent="SpawnPoints"]
+position = Vector2(185.471, 90.2927)
+rotation = 0.337755
+
+[node name="head" type="Sprite2D" parent="."]
+position = Vector2(202.164, 162.757)
+texture = ExtResource("3_ve4xj")
+offset = Vector2(5.56416, 318.037)
+script = ExtResource("3_bqsi3")
+
+[node name="Bursts" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.23645
+offset_top = 1.15018
+offset_right = 41.2365
+offset_bottom = 41.1501
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(207.728, 480.794)
+texture = ExtResource("2_i5w3q")
+
+[node name="Guts" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Gut12" type="Area2D" parent="Guts"]
+position = Vector2(71.0974, 144.928)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut12"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut5" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut5"]
+position = Vector2(340.031, 356.57)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut1" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut1"]
+position = Vector2(101.391, 361.171)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut2" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut2"]
+position = Vector2(194.127, 113.297)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut3" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut3"]
+position = Vector2(254.096, 137.452)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut4" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut4"]
+position = Vector2(253.478, 182.311)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut6" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut6"]
+position = Vector2(211.437, 372.673)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut7" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut7"]
+position = Vector2(168.779, 152.98)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut8" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut8"]
+position = Vector2(285.008, 300.209)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut9" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut9"]
+position = Vector2(259.042, 236.371)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut10" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut10"]
+position = Vector2(158.269, 116.173)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut11" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut11"]
+position = Vector2(84.0804, 436.51)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut13" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut13"]
+position = Vector2(140.958, 286.981)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut14" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut14"]
+position = Vector2(217.62, 446.862)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut15" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut15"]
+position = Vector2(273.879, 513.576)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut16" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut16"]
+position = Vector2(356.723, 441.111)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut17" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut17"]
+position = Vector2(154.56, 193.813)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut18" type="Area2D" parent="Guts"]
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut18"]
+position = Vector2(177.434, 215.092)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut34" type="Area2D" parent="Guts"]
+position = Vector2(-34.6213, 614.795)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut34"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut33" type="Area2D" parent="Guts"]
+position = Vector2(-64.2967, 706.239)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut33"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut32" type="Area2D" parent="Guts"]
+position = Vector2(163.215, 695.311)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut32"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut31" type="Area2D" parent="Guts"]
+position = Vector2(220.711, 679.208)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut31"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut30" type="Area2D" parent="Guts"]
+position = Vector2(157.033, 624.573)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut30"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut29" type="Area2D" parent="Guts"]
+position = Vector2(-20.4018, 660.229)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut29"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut28" type="Area2D" parent="Guts"]
+position = Vector2(-13.6012, 571.662)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut28"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut27" type="Area2D" parent="Guts"]
+position = Vector2(100.155, 547.507)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut27"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut26" type="Area2D" parent="Guts"]
+position = Vector2(186.09, 569.362)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut26"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut25" type="Area2D" parent="Guts"]
+position = Vector2(-4.94586, 502.649)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut25"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut24" type="Area2D" parent="Guts"]
+position = Vector2(69.8609, 491.146)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut24"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut23" type="Area2D" parent="Guts"]
+position = Vector2(174.961, 505.524)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut23"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut22" type="Area2D" parent="Guts"]
+position = Vector2(50.6955, 432.485)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut22"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut21" type="Area2D" parent="Guts"]
+position = Vector2(127.975, 450.313)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut21"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut20" type="Area2D" parent="Guts"]
+position = Vector2(101.391, 386.476)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut20"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut19" type="Area2D" parent="Guts"]
+position = Vector2(23.4931, 374.973)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut19"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut37" type="Area2D" parent="Guts"]
+position = Vector2(49.459, 85.6918)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut37"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut36" type="Area2D" parent="Guts"]
+position = Vector2(230.603, 720.041)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut36"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="Gut35" type="Area2D" parent="Guts"]
+position = Vector2(151.468, 414.656)
+collision_layer = 2
+
+[node name="GutsCollision" type="CollisionShape2D" parent="Guts/Gut35"]
+position = Vector2(137.867, 165.633)
+shape = SubResource("CircleShape2D_si01m")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.8
+script = ExtResource("4_525b8")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
